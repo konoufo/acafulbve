@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row" style="margin-top:60px">
+    <div class="col-md-8 col-md-offset-2">
+        <h4 style="font-weight:300">Sélectionner le projet à déposer au BVE:</h4>
+        <form action="" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+            <div class="form-group">
+                <select name="id" class="form-control">
+                    {% for idx, project in projects %}
+                        {% if project.0 %}
+                            <option value="{{idx}}">{{project.1}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Déposer</button>
+        </form>
+        <p class="lead text-{% if success %}success{% else %}danger{% endif %}" style="font-weight:300; margin-top:18px">
+            {{alert}}
+            {% if not success %}
+                {% include 'error.html' %}
+            {% endif %}
+        </p>
+    </div>
+</div>
+{% endblock %}

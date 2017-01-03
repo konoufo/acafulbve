@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+{% block styles %}
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootflat.github.io/bootflat/css/bootflat.css">
+    {% block extra_styles %}{% endblock %}
+{% endblock %}
+{% block head_scripts %}
+    <script src="https://use.fontawesome.com/5df5117cd6.js"></script>
+    {% block extra_head_scripts %}{% endblock %}
+{% endblock %}
+</head>
+<body style="background-color:#CCD1D9">
+{% block base_content %}
+    <section class="container">
+        {% block content %}
+
+        {% endblock %}
+    </section>
+{% endblock %}
+{% block scripts %}
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <!-- Bootflat's JS files.-->
+    <script src="https://bootflat.github.io/bootflat/js/icheck.min.js"></script>
+    <script src="https://bootflat.github.io/bootflat/js/jquery.fs.selecter.min.js"></script>
+    <script src="https://bootflat.github.io/bootflat/js/jquery.fs.stepper.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("input[type=checkbox]").iCheck({
+                checkboxClass: 'icheckbox_flat',
+                increaseArea: '20%'
+            });
+        })
+    </script>
+    {% block extra_scripts %}{% endblock %}
+{% endblock %}
+</body>
+</html>
